@@ -1,0 +1,19 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Temporary scripts
+scratch/
+scratch_*.py
+test_*.py
+
+# Archives
+michelleot-production.zip
+*.zip
+*.tar.gz
+
+# Python cache
+__pycache__/
+*.pyc

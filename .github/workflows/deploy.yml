@@ -1,0 +1,32 @@
+name: Deploy to Hosting Server
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Sync & Deploy to DirectAdmin
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup SSH Key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: Add Server to Known Hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H da40.host-ww.net >> ~/.ssh/known_hosts
+
+      - name: Push to DirectAdmin Git Remote
+        run: |
+          git remote add production michell9@da40.host-ww.net:domains/michelleot.co.za/Michelleot.git
+          git push production main --force

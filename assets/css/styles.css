@@ -1,0 +1,1135 @@
+/* ==========================================================================
+   Michelle Sathekge Occupational Therapy - Master Stylesheet
+   Controlled Reference: Master Corporate Identity Manual (Edition 02 • 2026)
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+  /* Core Brand Colors (Page 9 of Brand Manual) */
+  --color-primary-green: #0B4033;   /* Principal identity colour: headings, headers, brand surfaces */
+  --color-signature-gold: #C09A47;  /* Signature logo gold: accents, rules, controlled emphasis */
+  --color-supporting-sage: #6F8862; /* Supporting sage: secondary badges, data accents */
+
+  /* Functional Neutrals */
+  --color-warm-neutral: #F7F5EF;    /* Backgrounds and negative space */
+  --color-charcoal: #333333;        /* Body copy and high-legibility typography */
+  --color-white: #FFFFFF;           /* Neutral card canvas & reversed layouts */
+  --color-border: #E2DDD2;          /* Subtle divider border */
+  --color-border-subtle: #ECE8DE;   /* Light card border */
+
+  /* Typography (Page 10 of Brand Manual: Arial digital specification) */
+  --font-family: Arial, Helvetica, sans-serif;
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(11, 64, 51, 0.06);
+  --shadow-md: 0 8px 24px rgba(11, 64, 51, 0.08);
+  --shadow-lg: 0 16px 40px rgba(11, 64, 51, 0.12);
+
+  --transition: 0.25s ease-in-out;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden !important;
+  position: relative;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-warm-neutral);
+  color: var(--color-charcoal);
+  font-family: var(--font-family);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.container {
+  width: min(1160px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(100% - 1.75rem, 100%);
+  }
+  .section {
+    padding-block: 3.5rem 2.5rem;
+  }
+  .contact-card {
+    padding: 1.5rem 1rem !important;
+  }
+  .location-card-box {
+    padding: 0.85rem 0.65rem !important;
+  }
+}
+
+.section {
+  padding-block: 5rem;
+}
+
+.section-white {
+  background-color: var(--color-white);
+  border-block: 1px solid var(--color-border);
+}
+
+.section-green {
+  background-color: var(--color-primary-green);
+  color: var(--color-white);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: 3.5rem;
+}
+
+/* Typography Standards (Section 08) */
+h1 {
+  font-size: clamp(2rem, 3.8vw, 2.5rem); /* 30-36px Digital Spec */
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-primary-green);
+  margin-bottom: 1rem;
+}
+
+.section-green h1,
+.section-green h2 {
+  color: var(--color-white);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 2.6vw, 1.625rem); /* 22-26px Digital Spec */
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary-green);
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.15rem; /* 17-20px Digital Spec */
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-primary-green);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.05rem; /* 16-18px Regular 400 */
+  line-height: 1.5;
+  color: var(--color-charcoal);
+  margin-bottom: 1.25rem;
+  max-width: 80ch; /* 55-85 characters measure rule */
+}
+
+.section-green p {
+  color: #DDE5E2;
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  background-color: transparent;
+  color: var(--color-primary-green);
+  border-left: 3px solid var(--color-signature-gold);
+  border-radius: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.badge-gold {
+  background-color: transparent;
+  color: var(--color-signature-gold);
+  border-left: 3px solid var(--color-signature-gold);
+  border-radius: 0;
+}
+
+/* Header & Navigation (Variant B Lock-Up - Section 11 & 14) */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(247, 245, 239, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+/* Monogram Asset Concept conforming to 0.5X clear space */
+.brand-monogram {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-signature-gold);
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-primary-green);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.brand-monogram span {
+  color: var(--color-signature-gold);
+  margin-left: -2px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-primary-green);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.brand-descriptor {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #555555;
+  margin-top: 3px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--color-primary-green);
+}
+
+/* Slogan Rule & Banner (Section 03) */
+.slogan-banner {
+  background-color: var(--color-primary-green);
+  color: var(--color-white);
+  padding: 0.6rem 1rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-signature-gold);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-green);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: #072B22;
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-gold {
+  background-color: var(--color-signature-gold);
+  color: #121A15;
+}
+
+.btn-gold:hover {
+  background-color: #A98336;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1.5px solid var(--color-primary-green);
+  color: var(--color-primary-green);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary-green);
+  color: var(--color-white);
+}
+
+/* Modern Card Visual Enhancements */
+.hero-visual-wrapper {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.hero-visual-wrapper img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-visual-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--color-signature-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.about-photo-wrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: 1.5rem;
+}
+
+.about-photo-wrapper img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.track-img-banner {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  display: block;
+  margin: -2.5rem -2.5rem 1.75rem -2.5rem;
+  width: calc(100% + 5rem);
+}
+.hero {
+  padding-block: 4.5rem 4rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-signature-gold);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Medical Aid Logos & Tags Grid */
+.medical-aid-section {
+  margin-top: 3.5rem;
+  padding: 2.5rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.medical-aid-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.medical-aid-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  background-color: var(--color-warm-neutral);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary-green);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.medical-aid-pill:hover {
+  border-color: var(--color-signature-gold);
+  background-color: #FAF8F3;
+  transform: translateY(-1px);
+}
+
+/* Practice Gallery / Modalities in Action */
+.practice-gallery-section {
+  margin-top: 3.5rem;
+  padding: 2.5rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.practice-gallery-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.25rem auto;
+}
+
+.practice-gallery-header h3 {
+  color: var(--color-primary-green);
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.practice-gallery-header p {
+  color: #666666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.practice-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .practice-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .practice-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .practice-gallery-section {
+    padding: 1.5rem;
+  }
+}
+
+.gallery-card {
+  background-color: var(--color-warm-neutral);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-signature-gold);
+}
+
+.gallery-card-img-wrap {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  background-color: #ECE8DD;
+}
+
+.gallery-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.gallery-card:hover .gallery-card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.gallery-card-body {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gallery-card-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.gallery-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 0.45rem;
+  line-height: 1.3;
+}
+
+.gallery-card-desc {
+  font-size: 0.85rem;
+  color: #555555;
+  line-height: 1.45;
+  margin-bottom: 0;
+}
+
+.condition-tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.condition-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  background-color: #F1EFE8;
+  border-radius: var(--radius-sm);
+  color: #444444;
+}
+
+/* Service Dual-Track Grid */
+.tracks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.track-column {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.track-column.corporate {
+  border-top: 4px solid var(--color-primary-green);
+}
+
+.track-column.clinical {
+  border-top: 4px solid var(--color-signature-gold);
+}
+
+.track-list {
+  list-style: none;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.track-item {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.track-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.track-item h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 0.35rem;
+}
+
+.track-item p {
+  font-size: 0.92rem;
+  color: var(--color-charcoal);
+  margin-bottom: 0;
+}
+
+/* Industry Sector Tags */
+.sector-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.sector-pill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  background-color: var(--color-warm-neutral);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-charcoal);
+}
+
+/* Scope & Guardrail Banner */
+.guardrail-card {
+  margin-top: 2.5rem;
+  background-color: #F1EFE8;
+  border-left: 4px solid var(--color-supporting-sage);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.9rem;
+  color: #444444;
+}
+
+.guardrail-card strong {
+  color: var(--color-primary-green);
+}
+
+/* Contact Grid */
+.contact-container {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3.5rem;
+}
+
+.contact-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary-green);
+  margin-bottom: 0.4rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: var(--color-warm-neutral);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-charcoal);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-green);
+  background-color: var(--color-white);
+}
+
+/* Footer (Page 13 & 14) */
+footer {
+  background-color: var(--color-primary-green);
+  color: #DDE5E2;
+  border-top: 3px solid var(--color-signature-gold);
+  padding-block: 3.5rem 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-col h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-signature-gold);
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #DDE5E2;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--color-signature-gold);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(226, 221, 210, 0.15);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: #A3B5AE;
+}
+
+/* Smart WhatsApp Action Widget & Popover Menu */
+.whatsapp-widget-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+}
+
+.whatsapp-popover {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 290px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+  padding: 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.96);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 1000;
+}
+
+.whatsapp-popover.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.whatsapp-popover-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: 0.85rem;
+}
+
+.whatsapp-popover-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--color-primary-green);
+  color: var(--color-signature-gold);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid var(--color-signature-gold);
+}
+
+.whatsapp-popover-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  line-height: 1.1;
+}
+
+.whatsapp-popover-sub {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.whatsapp-popover-prompt {
+  font-size: 0.82rem;
+  color: var(--color-charcoal);
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+}
+
+.whatsapp-booking-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.whatsapp-opt-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  background-color: #FAF8F3;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--color-charcoal);
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.whatsapp-opt-btn:hover {
+  background-color: #E8F5E9;
+  border-color: #25D366;
+  color: #075E54;
+  transform: translateX(2px);
+}
+
+.whatsapp-opt-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-signature-gold);
+}
+
+/* Floating WhatsApp Button Trigger */
+.whatsapp-float {
+  width: 58px;
+  height: 58px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+/* Mobile Adjustments for WhatsApp Widget */
+@media (max-width: 768px) {
+  .whatsapp-widget-container {
+    bottom: 18px;
+    right: 18px;
+  }
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+  }
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+  .whatsapp-popover {
+    bottom: 64px;
+    right: 0;
+    width: min(290px, calc(100vw - 36px));
+  }
+}
+
+/* Location Tabs & Navigation Buttons */
+.location-tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.location-tab-btn {
+  flex: 1;
+  padding: 0.65rem 0.75rem;
+  background-color: var(--color-warm-neutral);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-charcoal);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.location-tab-btn.active {
+  background-color: var(--color-primary-green);
+  color: #FFFFFF;
+  border-color: var(--color-primary-green);
+}
+
+.location-card-box {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  background-color: #FAF8F3;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.nav-app-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.btn-nav-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-gmaps {
+  background-color: #FFFFFF;
+  color: #333333;
+  border: 1px solid var(--color-border);
+}
+
+.btn-gmaps:hover {
+  background-color: #F1EFE8;
+  border-color: #BBB;
+}
+
+.btn-waze {
+  background-color: #33CCFF;
+  color: #002233;
+  border: 1px solid #29B6E6;
+}
+
+.btn-waze:hover {
+  background-color: #1ABCF7;
+  color: #000;
+}
+
+/* Map Container */
+.map-frame-wrapper {
+  margin-top: 1rem;
+  width: 100%;
+  height: 250px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: #ECE8DE;
+}
+
+.map-frame-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .hero-grid, .tracks-grid, .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+    justify-content: space-between;
+  }
+
+  /* Compact, Refined Slide-over Drawer Menu */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 250px;
+    max-width: 75vw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: #FFFFFF !important;
+    border-left: 1px solid var(--color-border);
+    border-bottom: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 4rem 1.5rem 2rem;
+    gap: 0.75rem;
+    box-shadow: -6px 0 25px rgba(0, 0, 0, 0.12);
+    transform: translateX(105%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+    visibility: hidden; /* Prevent horizontal scrolling / exposing off-screen menu */
+    pointer-events: none;
+    z-index: 105;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary-green) !important;
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0.2rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .nav-links .btn {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* Fixed close/hamburger toggle */
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-primary-green) !important;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0.4rem;
+    z-index: 110;
+  }
+
+  /* Backdrop Overlay */
+  .menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 102;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .menu-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .whatsapp-float {
+    bottom: 18px;
+    right: 18px;
+    width: 52px;
+    height: 52px;
+  }
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  .slogan-banner {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080808">
+  <title>Page Not Found | Michelle OT</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <style>
+    :root { 
+      --black: #080808; 
+      --gold: #d9ad32; 
+      --gold-light: #f1cc59; 
+      --white: #f7f7f5; 
+      --muted: #c2c2bd; 
+    }
+    * { box-sizing: border-box; }
+    body { 
+      margin: 0; 
+      min-height: 100vh; 
+      padding: 24px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      color: var(--white); 
+      background: radial-gradient(ellipse at 75% 25%, #202018 0%, #0b0b0a 45%, #050505 100%); 
+      font-family: Arial, Helvetica, sans-serif; 
+    }
+    .page { 
+      position: relative; 
+      width: min(800px, 100%); 
+      background: linear-gradient(115deg, rgba(0,0,0,.98), rgba(14,14,13,.96)); 
+      border: 1px solid #29251a; 
+      overflow: hidden; 
+      box-shadow: 0 28px 90px rgba(0,0,0,.45); 
+      text-align: center;
+      padding: 50px 30px;
+    }
+    .gold-line { 
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px; 
+      background: linear-gradient(90deg, #a77d19, var(--gold-light), #9d7417); 
+    }
+    .symbol { 
+      width: 64px; 
+      height: 64px; 
+      border: 2px solid var(--gold); 
+      color: var(--gold-light); 
+      display: grid; 
+      place-items: center; 
+      border-radius: 50%; 
+      font-size: 22px; 
+      font-weight: 700; 
+      letter-spacing: -1px; 
+      margin: 0 auto 20px;
+    }
+    .status-code {
+      font-size: clamp(60px, 10vw, 96px);
+      font-weight: 800;
+      color: var(--gold-light);
+      margin: 0;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(24px, 4vw, 32px);
+      margin: 15px 0 12px;
+    }
+    p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto 30px;
+    }
+    .button {
+      display: inline-block;
+      padding: 13px 26px;
+      background: linear-gradient(120deg, var(--gold-light), #c89923);
+      color: #10100d;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: opacity 0.2s ease;
+    }
+    .button:hover { opacity: 0.92; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="gold-line"></div>
+    <div class="symbol">OT</div>
+    <div class="status-code">404</div>
+    <h1>Page Not Found</h1>
+    <p>The page you are looking for does not exist or has been moved while our site is under construction.</p>
+    <a class="button" href="/">Return to Homepage</a>
+  </div>
+</body>
+</html>

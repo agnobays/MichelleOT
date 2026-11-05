@@ -1,0 +1,5 @@
+# Production robots.txt for Michelle Sathekge Occupational Therapy
+User-agent: *
+Allow: /
+
+Sitemap: https://michelleot.co.za/sitemap.xml

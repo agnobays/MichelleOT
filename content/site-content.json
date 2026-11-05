@@ -1,0 +1,131 @@
+{
+  "practice": {
+    "name": "Michelle Sathekge Occupational Therapy",
+    "shortName": "Michelle Sathekge OT",
+    "tagline": "EMPOWERING EVERY STEP TOWARDS A MEANINGFUL LIFE",
+    "coreMission": "To enable people to participate meaningfully in the daily activities, roles and environments that shape their lives through person-centred, evidence-informed occupational therapy.",
+    "positioningStatement": "Michelle Sathekge Occupational Therapy supports meaningful participation by considering the person, the activity and the environment together. In corporate and industrial contexts, the focus is functional participation and vocational rehabilitation, with recommendations grounded in assessment, consent, professional competence and the actual demands of the role.",
+    "practiceNumberBHF": "1050664",
+    "medicalAidsAccepted": [
+      "Discovery Health",
+      "Bonitas",
+      "GEMS",
+      "Profmed",
+      "Fedhealth",
+      "Medihelp",
+      "Sizwe Hosmed",
+      "Bankmed",
+      "LA Health",
+      "Medshield",
+      "Hosmed",
+      "KeyHealth",
+      "Bestmed",
+      "Momentum Health",
+      "Polmed",
+      "Umvuzo Health"
+    ],
+    "contact": {
+      "email": "info@michelleot.co.za",
+      "formAction": "mailto:info@michelleot.co.za",
+      "phone": "+27 61 530 6884",
+      "whatsapp": "+27615306884",
+      "locations": [
+        {
+          "name": "Netcare Garden City Hospital",
+          "address": "35 Bartlett Road, Mayfair West, Johannesburg, 2092",
+          "hours": "Monday & Wednesday: 09:00 – 15:00",
+          "mapQuery": "Netcare+Garden+City+Hospital+35+Bartlett+Road+Mayfair+West+Johannesburg"
+        },
+        {
+          "name": "Midrand Consulting Rooms",
+          "address": "Woodmead Dr & Dytchley Rd, Barbeque Downs / Plooysville AH, Midrand, 1686",
+          "hours": "Tuesday & Thursday: 09:00 – 15:00",
+          "mapQuery": "Woodmead+Dr+Dytchley+Rd+Midrand+1686"
+        }
+      ]
+    }
+  },
+  "coreValues": [
+    {
+      "value": "Dignity and agency",
+      "description": "Treat clients as active participants. Explain assessments and recommendations in accessible language; respect preferences, consent, privacy and individual goals."
+    },
+    {
+      "value": "Evidence-informed practice",
+      "description": "Base clinical reasoning on rigorous assessment, current evidence, and professional scope. Document clear rationale and collaborate when needs exceed scope."
+    },
+    {
+      "value": "Practical participation",
+      "description": "Connect intervention to real-world tasks. Consider person, task, and environment together, avoiding defining success merely through impairment metrics."
+    },
+    {
+      "value": "Trust and accountability",
+      "description": "Communicate transparently, protect confidential data, and collaborate with clients, families, and workplace partners within clear consent boundaries."
+    }
+  ],
+  "serviceTracks": {
+    "clinical": {
+      "title": "Clinical Services",
+      "badge": "Person-Centred Care",
+      "summary": "Evidence-informed assessment and practical rehabilitation empowering individuals to rebuild autonomy, function, and meaningful daily participation.",
+      "areas": [
+        {
+          "name": "Neuro-Rehabilitation",
+          "description": "Specialised restorative intervention for neurological conditions to enhance motor control, cognition, and independence in everyday roles.",
+          "conditions": ["Stroke", "Traumatic Brain Injury", "Multiple Sclerosis", "Parkinson’s Disease"]
+        },
+        {
+          "name": "Physical Rehabilitation",
+          "description": "Comprehensive functional recovery and adaptive retraining for orthopedic injuries, trauma, and post-surgical recovery.",
+          "conditions": ["Hand Injuries", "Joint Replacement", "Bone Fractures", "Amputations"]
+        },
+        {
+          "name": "Mental Health Rehabilitation",
+          "description": "Evidence-based occupational therapy supporting emotional regulation, routine structuring, life skills, and social participation. We offer both individual and group therapy sessions.",
+          "formats": "Individual & Group Therapy",
+          "conditions": ["Bipolar Disorder", "Depression", "Anxiety", "Schizophrenia"]
+        }
+      ]
+    },
+    "corporate": {
+      "title": "Vocational & Corporate Rehabilitation",
+      "badge": "Workplace & Industrial Focus",
+      "summary": "Assessment-informed support for functional participation, work demands, and structured return-to-work planning.",
+      "scopeNote": "Within professional occupational therapy scope; collaborative with occupational health, medical, and safety teams.",
+      "services": [
+        {
+          "title": "Functional Capacity & Work Role Assessments",
+          "description": "Comprehensive functional evaluations matched directly against the physical, cognitive, and environmental demands of specific job roles."
+        },
+        {
+          "title": "Vocational Rehabilitation & Graded Return-to-Work",
+          "description": "Structured, progressive return-to-work planning and rehabilitation coordinated with employees, treating clinicians, and occupational health teams."
+        },
+        {
+          "title": "Workstation Ergonomics & Task Adaptation",
+          "description": "Practical adaptation recommendations for physical workstations, tooling, and task sequencing to support safe, sustainable participation."
+        },
+        {
+          "title": "Sector-Specific Occupational Support",
+          "description": "Understanding actual job demands across physically demanding sectors including engineering, mining, logistics, manufacturing, and technical trades."
+        }
+      ]
+    }
+  },
+  "sectors": [
+    "Mining & Minerals Processing",
+    "Engineering & Technical Trades",
+    "Construction & Infrastructure",
+    "Manufacturing & Industrial Production",
+    "Transport, Logistics & Warehousing",
+    "Corporate & Professional Services"
+  ],
+  "editorialGuardrails": {
+    "avoid": [
+      "No guaranteed return-to-work promises",
+      "No claims of employee fitness certification beyond OT scope",
+      "No reducing people to injury labels",
+      "No claims of existing corporate medical centres (Horizon 2036 vision)"
+    ]
+  }
+}

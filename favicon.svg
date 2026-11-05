@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#F7F5EF"/>
+  <rect x="2" y="2" width="60" height="60" rx="10" fill="none" stroke="#E2DDD2" stroke-width="1.5"/>
+  <!-- Interlocking M & S Monogram Concept -->
+  <text x="24" y="44" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="34" fill="#0B4033" text-anchor="middle">M</text>
+  <text x="40" y="44" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="34" fill="#C09A47" text-anchor="middle">S</text>
+</svg>
