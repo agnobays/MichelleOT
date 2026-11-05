@@ -17,3 +17,7 @@ michelleot-production.zip
 # Python cache
 __pycache__/
 *.pyc
+
+# Deployment Keys
+deploy_key
+deploy_key.pub
