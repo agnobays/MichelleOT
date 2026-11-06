@@ -48,8 +48,14 @@
 <body>
 
   <div class="preview-box">
-    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #C09A47; font-weight: bold; margin-bottom: 15px;">
-      Official Brand Email Signature
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #C09A47; font-weight: bold;">
+        Official Brand Email Signature
+      </div>
+      <div>
+        <button id="btn-personal" onclick="setEmailType('personal')" style="padding: 5px 12px; font-size: 11px; font-weight: bold; border-radius: 4px; border: 1px solid #0B4033; background: #0B4033; color: #FFF; cursor: pointer;">Michelle Personal (m.sathekge@)</button>
+        <button id="btn-info" onclick="setEmailType('info')" style="padding: 5px 12px; font-size: 11px; font-weight: bold; border-radius: 4px; border: 1px solid #C09A47; background: #FFF; color: #0B4033; cursor: pointer;">Practice General (info@)</button>
+      </div>
     </div>
 
     <!-- SIGNATURE START (This is the copyable signature block) -->
@@ -90,7 +96,7 @@
               <tr>
                 <td style="padding-right: 6px; color: #C09A47; font-weight: bold;">E:</td>
                 <td>
-                  <a href="mailto:info@michelleot.co.za" style="color: #0B4033; text-decoration: none; font-weight: 600;">info@michelleot.co.za</a>
+                  <a id="sig-email-link" href="mailto:m.sathekge@michelleot.co.za" style="color: #0B4033; text-decoration: none; font-weight: 600;">m.sathekge@michelleot.co.za</a>
                 </td>
               </tr>
               <tr>
@@ -135,6 +141,27 @@
   </div>
 
   <script>
+    function setEmailType(type) {
+      const emailLink = document.getElementById('sig-email-link');
+      const btnPersonal = document.getElementById('btn-personal');
+      const btnInfo = document.getElementById('btn-info');
+      if (type === 'personal') {
+        emailLink.href = 'mailto:m.sathekge@michelleot.co.za';
+        emailLink.textContent = 'm.sathekge@michelleot.co.za';
+        btnPersonal.style.background = '#0B4033';
+        btnPersonal.style.color = '#FFF';
+        btnInfo.style.background = '#FFF';
+        btnInfo.style.color = '#0B4033';
+      } else {
+        emailLink.href = 'mailto:info@michelleot.co.za';
+        emailLink.textContent = 'info@michelleot.co.za';
+        btnInfo.style.background = '#0B4033';
+        btnInfo.style.color = '#FFF';
+        btnPersonal.style.background = '#FFF';
+        btnPersonal.style.color = '#0B4033';
+      }
+    }
+
     function copySignature() {
       const container = document.getElementById('signature-container');
       const range = document.createRange();
