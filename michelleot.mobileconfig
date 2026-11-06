@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>EmailAccountDescription</key>
+			<string>info@michelleot.co.za</string>
+			<key>EmailAccountName</key>
+			<string>Michelle Sathekge OT</string>
+			<key>EmailAccountType</key>
+			<string>EmailTypeIMAP</string>
+			<key>EmailAddress</key>
+			<string>info@michelleot.co.za</string>
+			<key>IncomingMailServerAuthentication</key>
+			<string>EmailAuthPassword</string>
+			<key>IncomingMailServerHostName</key>
+			<string>da40.host-ww.net</string>
+			<key>IncomingMailServerPortNumber</key>
+			<integer>993</integer>
+			<key>IncomingMailServerUseSSL</key>
+			<true/>
+			<key>IncomingMailServerUsername</key>
+			<string>info@michelleot.co.za</string>
+			<key>OutgoingMailServerAuthentication</key>
+			<string>EmailAuthPassword</string>
+			<key>OutgoingMailServerHostName</key>
+			<string>da40.host-ww.net</string>
+			<key>OutgoingMailServerPortNumber</key>
+			<integer>465</integer>
+			<key>OutgoingMailServerUseSSL</key>
+			<true/>
+			<key>OutgoingMailServerUsername</key>
+			<string>info@michelleot.co.za</string>
+			<key>OutgoingPasswordSameAsIncomingPassword</key>
+			<true/>
+			<key>PayloadDescription</key>
+			<string>Configures a Mail account</string>
+			<key>PayloadDisplayName</key>
+			<string>info@michelleot.co.za</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.mail.managed.62EB6558-B5D6-4854-B3B3-AE84E7730E55</string>
+			<key>PayloadType</key>
+			<string>com.apple.mail.managed</string>
+			<key>PayloadUUID</key>
+			<string>62EB6558-B5D6-4854-B3B3-AE84E7730E55</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>disableMailRecentsSyncing</key>
+			<false/>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Configures a Mail account</string>
+	<key>PayloadDisplayName</key>
+	<string>info@michelleot.co.za</string>
+	<key>PayloadIdentifier</key>
+	<string>za.co.michelleot.email-config-profile.info</string>
+	<key>PayloadOrganization</key>
+	<string>michelleot.co.za</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>AADBBDF1-4E30-449B-9DBC-98DE6C8927F7</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
