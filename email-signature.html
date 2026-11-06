@@ -11,7 +11,7 @@
       color: #333333;
     }
     .preview-box {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto 30px auto;
       background: #FFFFFF;
       padding: 30px;
@@ -20,10 +20,10 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.06);
     }
     .instructions {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto;
       background: #FAF8F3;
-      padding: 20px;
+      padding: 22px;
       border-radius: 8px;
       border: 1px solid #ECE7DD;
       font-size: 13px;
@@ -33,111 +33,152 @@
       background-color: #0B4033;
       color: #FFFFFF;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .copy-btn:hover {
+      background-color: #072B22;
+    }
+    .secondary-btn {
+      background-color: #FFFFFF;
+      color: #0B4033;
+      border: 1px solid #0B4033;
+      padding: 12px 18px;
       font-size: 13px;
       font-weight: bold;
       border-radius: 4px;
       cursor: pointer;
-      margin-top: 15px;
+      margin-left: 8px;
     }
-    .copy-btn:hover {
-      background-color: #072B22;
+    .secondary-btn:hover {
+      background-color: #FAF8F3;
+    }
+    .signature-wrapper {
+      padding: 20px;
+      border: 1px dashed #C09A47;
+      border-radius: 6px;
+      background: #FFFFFF;
+      margin-bottom: 20px;
+    }
+    .toggle-pill {
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
     }
   </style>
 </head>
 <body>
 
   <div class="preview-box">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #C09A47; font-weight: bold;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+      <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #C09A47; font-weight: bold;">
         Official Brand Email Signature
       </div>
       <div>
-        <button id="btn-personal" onclick="setEmailType('personal')" style="padding: 5px 12px; font-size: 11px; font-weight: bold; border-radius: 4px; border: 1px solid #0B4033; background: #0B4033; color: #FFF; cursor: pointer;">Michelle Personal (m.sathekge@)</button>
-        <button id="btn-info" onclick="setEmailType('info')" style="padding: 5px 12px; font-size: 11px; font-weight: bold; border-radius: 4px; border: 1px solid #C09A47; background: #FFF; color: #0B4033; cursor: pointer;">Practice General (info@)</button>
+        <button id="btn-personal" class="toggle-pill" onclick="setEmailType('personal')" style="border: 1px solid #0B4033; background: #0B4033; color: #FFF;">Michelle Personal (m.sathekge@)</button>
+        <button id="btn-info" class="toggle-pill" onclick="setEmailType('info')" style="border: 1px solid #C09A47; background: #FFF; color: #0B4033;">Practice General (info@)</button>
       </div>
     </div>
 
-    <!-- SIGNATURE START (This is the copyable signature block) -->
-    <div id="signature-container">
-      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; line-height: 1.45;">
-        <tr>
-          <!-- Logo Column -->
-          <td valign="top" style="padding-right: 20px; border-right: 2px solid #C09A47;">
-            <a href="https://michelleot.co.za" target="_blank" style="text-decoration: none;">
-              <img src="https://michelleot.co.za/assets/images/branding/logo-variant-b-trimmed.png" 
-                   alt="Michelle Sathekge Occupational Therapy" 
-                   width="140" 
-                   style="display: block; width: 140px; height: auto; border: 0;">
-            </a>
-          </td>
+    <!-- VISUAL SIGNATURE CONTAINER (Rich Formatted HTML) -->
+    <div class="signature-wrapper">
+      <div id="signature-container">
+        <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; line-height: 1.45; border-collapse: collapse;">
+          <tr>
+            <!-- Logo Column -->
+            <td valign="top" style="padding-right: 20px; border-right: 2px solid #C09A47;">
+              <a href="https://michelleot.co.za" target="_blank" style="text-decoration: none;">
+                <img src="https://michelleot.co.za/assets/images/branding/logo-variant-b-trimmed.png" 
+                     alt="Michelle Sathekge Occupational Therapy" 
+                     width="140" 
+                     style="display: block; width: 140px; height: auto; border: 0;">
+              </a>
+            </td>
 
-          <!-- Details Column -->
-          <td valign="top" style="padding-left: 20px;">
-            <!-- Name & Designation -->
-            <div style="font-size: 16px; font-weight: bold; color: #0B4033; margin-bottom: 2px; letter-spacing: 0.02em;">
-              Michelle Sathekge
-            </div>
-            <div style="font-size: 12px; font-weight: bold; color: #C09A47; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">
-              Occupational Therapist
-            </div>
-            <div style="font-size: 11px; color: #666666; margin-bottom: 10px;">
-              BHF Practice No: <strong style="color: #0B4033;">1050664</strong>
-            </div>
+            <!-- Details Column -->
+            <td valign="top" style="padding-left: 20px;">
+              <!-- Name & Designation -->
+              <div style="font-size: 16px; font-weight: bold; color: #0B4033; margin-bottom: 2px; letter-spacing: 0.02em;">
+                Michelle Sathekge
+              </div>
+              <div style="font-size: 12px; font-weight: bold; color: #C09A47; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">
+                Occupational Therapist
+              </div>
+              <div style="font-size: 11px; color: #666666; margin-bottom: 10px;">
+                BHF Practice No: <strong style="color: #0B4033;">1050664</strong>
+              </div>
 
-            <!-- Contact Numbers & Links -->
-            <table cellpadding="0" cellspacing="0" border="0" style="font-size: 12px; line-height: 1.5; color: #444444;">
-              <tr>
-                <td style="padding-right: 6px; color: #C09A47; font-weight: bold;">T:</td>
-                <td>
-                  <a href="tel:+27615306884" style="color: #333333; text-decoration: none; font-weight: 600;">+27 61 530 6884</a>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding-right: 6px; color: #C09A47; font-weight: bold;">E:</td>
-                <td>
-                  <a id="sig-email-link" href="mailto:m.sathekge@michelleot.co.za" style="color: #0B4033; text-decoration: none; font-weight: 600;">m.sathekge@michelleot.co.za</a>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding-right: 6px; color: #C09A47; font-weight: bold;">W:</td>
-                <td>
-                  <a href="https://michelleot.co.za" target="_blank" style="color: #0B4033; text-decoration: none; font-weight: 600;">www.michelleot.co.za</a>
-                </td>
-              </tr>
-            </table>
+              <!-- Contact Numbers & Links -->
+              <table cellpadding="0" cellspacing="0" border="0" style="font-size: 12px; line-height: 1.5; color: #444444;">
+                <tr>
+                  <td style="padding-right: 6px; color: #C09A47; font-weight: bold;">T:</td>
+                  <td>
+                    <a href="tel:+27615306884" style="color: #333333; text-decoration: none; font-weight: 600;">+27 61 530 6884</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 6px; color: #C09A47; font-weight: bold;">E:</td>
+                  <td>
+                    <a id="sig-email-link" href="mailto:m.sathekge@michelleot.co.za" style="color: #0B4033; text-decoration: none; font-weight: 600;">m.sathekge@michelleot.co.za</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-right: 6px; color: #C09A47; font-weight: bold;">W:</td>
+                  <td>
+                    <a href="https://michelleot.co.za" target="_blank" style="color: #0B4033; text-decoration: none; font-weight: 600;">www.michelleot.co.za</a>
+                  </td>
+                </tr>
+              </table>
 
-            <!-- Locations -->
-            <div style="font-size: 11px; color: #777777; margin-top: 10px; padding-top: 8px; border-top: 1px solid #ECE7DD; line-height: 1.4;">
-              <strong style="color: #0B4033;">Consulting Locations:</strong><br>
-              • Netcare Garden City Hospital, Mayfair West, JHB<br>
-              • Midrand Consulting Rooms, Barbeque Downs, Midrand
-            </div>
+              <!-- Locations -->
+              <div style="font-size: 11px; color: #777777; margin-top: 10px; padding-top: 8px; border-top: 1px solid #ECE7DD; line-height: 1.4;">
+                <strong style="color: #0B4033;">Consulting Locations:</strong><br>
+                • Netcare Garden City Hospital, Mayfair West, JHB<br>
+                • Midrand Consulting Rooms, Barbeque Downs, Midrand
+              </div>
 
-            <!-- Slogan Banner -->
-            <div style="font-size: 9px; font-weight: bold; color: #0B4033; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px;">
-              EMPOWERING EVERY STEP TOWARDS A MEANINGFUL LIFE
-            </div>
-          </td>
-        </tr>
-      </table>
+              <!-- Slogan Banner -->
+              <div style="font-size: 9px; font-weight: bold; color: #0B4033; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px;">
+                EMPOWERING EVERY STEP TOWARDS A MEANINGFUL LIFE
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <!-- SIGNATURE END -->
 
-    <button class="copy-btn" onclick="copySignature()">Copy Signature to Clipboard</button>
-    <span id="copy-status" style="font-size: 12px; color: #0B4033; font-weight: bold; margin-left: 10px; display: none;">✓ Copied! Paste directly into Outlook / Mail Settings.</span>
+    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <button class="copy-btn" onclick="copyRichSignature()">✨ Copy Formatted Signature (for Outlook / Mail)</button>
+      <button class="secondary-btn" onclick="copyRawHtml()">Copy Raw HTML Code</button>
+      <span id="copy-status" style="font-size: 13px; color: #0B4033; font-weight: bold; display: none;"></span>
+    </div>
+
+    <p style="font-size: 12px; color: #777777; margin-top: 12px; margin-bottom: 0;">
+      💡 <strong>Important:</strong> If you paste into Notepad, it will look like plain text because Notepad does not support images or formatting. When you paste (<strong>Ctrl + V</strong>) directly into <strong>Outlook, Word, or Apple Mail</strong>, it will paste with the full logo, gold divider, colors, and links!
+    </p>
   </div>
 
   <div class="instructions">
-    <h4 style="color: #0B4033; margin-top: 0; margin-bottom: 8px;">How to add this to her email:</h4>
-    <p style="margin-bottom: 8px;"><strong>Option A: On Outlook (Computer):</strong><br>
-    Click the "Copy Signature to Clipboard" button above, then in Outlook go to <em>File > Options > Mail > Signatures</em>. Create a new signature and press <strong>Ctrl + V</strong> (Paste).</p>
-    
-    <p style="margin-bottom: 8px;"><strong>Option B: On iPhone / iPad Mail:</strong><br>
-    Send an email with this signature to the iPhone, copy it on the phone, then go to <em>Settings > Mail > Signature</em>, paste it, and shake the phone to tap "Undo Change Attributes" (to preserve colors).</p>
-
-    <p style="margin-bottom: 0;"><strong>Option C: In DirectAdmin Webmail (Roundcube):</strong><br>
-    Log into webmail, go to <em>Settings > Identities > info@michelleot.co.za</em>, check the <em>HTML Signature</em> box, and paste.</p>
+    <h4 style="color: #0B4033; margin-top: 0; margin-bottom: 8px;">How to Paste in Microsoft Outlook:</h4>
+    <ol style="margin-top: 0; padding-left: 20px; margin-bottom: 15px;">
+      <li>Click the green <strong>"Copy Formatted Signature"</strong> button above.</li>
+      <li>Open <strong>Outlook</strong>.</li>
+      <li>Click <strong>File > Options > Mail > Signatures</strong> (or start a New Email and click <strong>Signature > Signatures...</strong>).</li>
+      <li>Click <strong>New</strong>, type a name (e.g. <em>Michelle Signature</em>).</li>
+      <li>Click inside the signature box and press <strong>Ctrl + V</strong> (Paste).</li>
+      <li>Under <em>"Choose default signature"</em>, select it for <strong>New messages</strong> and <strong>Replies/forwards</strong>.</li>
+      <li>Click <strong>OK</strong>.</li>
+    </ol>
+    <p style="margin-bottom: 0; color: #0B4033; font-weight: bold;">
+      ✓ Test by clicking "New Email" in Outlook — your signature will appear formatted with the logo and brand styling!
+    </p>
   </div>
 
   <script>
@@ -162,21 +203,55 @@
       }
     }
 
-    function copySignature() {
+    async function copyRichSignature() {
       const container = document.getElementById('signature-container');
+      const status = document.getElementById('copy-status');
+      
+      try {
+        if (navigator.clipboard && window.ClipboardItem) {
+          const htmlBlob = new Blob([container.innerHTML], { type: 'text/html' });
+          const textBlob = new Blob([container.innerText], { type: 'text/plain' });
+          const item = new ClipboardItem({
+            'text/html': htmlBlob,
+            'text/plain': textBlob
+          });
+          await navigator.clipboard.write([item]);
+          showStatus('✓ Formatted signature copied! Press Ctrl+V in Outlook.');
+          return;
+        }
+      } catch (err) {
+        console.log('ClipboardItem failed, using fallback selection:', err);
+      }
+
+      // Robust fallback
       const range = document.createRange();
       range.selectNode(container);
       window.getSelection().removeAllRanges();
       window.getSelection().addRange(range);
       try {
         document.execCommand('copy');
-        const status = document.getElementById('copy-status');
-        status.style.display = 'inline';
-        setTimeout(() => { status.style.display = 'none'; }, 4000);
-      } catch (err) {
-        alert('Please select the signature manually and press Ctrl+C to copy.');
+        showStatus('✓ Formatted signature copied! Press Ctrl+V in Outlook.');
+      } catch (e) {
+        alert('Please highlight the signature with your mouse and press Ctrl+C to copy.');
       }
       window.getSelection().removeAllRanges();
+    }
+
+    async function copyRawHtml() {
+      const container = document.getElementById('signature-container');
+      try {
+        await navigator.clipboard.writeText(container.innerHTML);
+        showStatus('✓ Raw HTML code copied to clipboard!');
+      } catch (err) {
+        alert('Could not copy HTML code.');
+      }
+    }
+
+    function showStatus(msg) {
+      const status = document.getElementById('copy-status');
+      status.textContent = msg;
+      status.style.display = 'inline';
+      setTimeout(() => { status.style.display = 'none'; }, 5000);
     }
   </script>
 
