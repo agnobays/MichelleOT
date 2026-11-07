@@ -31,6 +31,29 @@ if (empty($name) || empty($phone) || empty($email) || !filter_var($email, FILTER
     exit;
 }
 
+// Enforce South African Phone Number Rules (ICASA Standard)
+$clean_phone = preg_replace('/[\s\-\(\)\.]/', '', $phone);
+if (strpos($clean_phone, '+27') === 0) {
+    $clean_phone = '0' . substr($clean_phone, 3);
+} elseif (strpos($clean_phone, '0027') === 0) {
+    $clean_phone = '0' . substr($clean_phone, 4);
+} elseif (strpos($clean_phone, '27') === 0 && strlen($clean_phone) === 11) {
+    $clean_phone = '0' . substr($clean_phone, 2);
+}
+
+// Check 10 digits starting with 01-08 and not repeating dummy digits
+if (!preg_match('/^0[1-8][0-9]{8}$/', $clean_phone) || preg_match('/^0([0-9])\1{8}$/', $clean_phone)) {
+    http_response_code(400);
+    echo json_encode([
+        'success' => false,
+        'error' => 'Please provide a valid 10-digit South African phone number (e.g. 082 123 4567 or +27 61 530 6884).'
+    ]);
+    exit;
+}
+
+// Standard formatted phone display: 0XX XXX XXXX
+$formatted_phone = substr($clean_phone, 0, 3) . ' ' . substr($clean_phone, 3, 3) . ' ' . substr($clean_phone, 6, 4);
+
 // Format Area of Interest label
 $track_labels = [
     'individual' => 'Individual or Family Therapy (Clinical)',
@@ -41,10 +64,7 @@ $track_labels = [
 $track_display = isset($track_labels[$track]) ? $track_labels[$track] : ($track ? ucfirst($track) : 'General Enquiry');
 
 // Clean phone for WhatsApp international link (e.g. 082 -> 2782)
-$wa_phone = preg_replace('/[^0-9]/', '', $phone);
-if (strpos($wa_phone, '0') === 0) {
-    $wa_phone = '27' . substr($wa_phone, 1);
-}
+$wa_phone = '27' . substr($clean_phone, 1);
 
 $date_str = date('d M Y, H:i (T)');
 $subject = "New Website Enquiry: " . $name . " [" . $track_display . "]";
@@ -56,7 +76,7 @@ $boundary = "==Multipart_Boundary_x" . md5(time()) . "x";
 $text_body = "NEW CONSULTATION ENQUIRY - MICHELLE SATHEKGE OCCUPATIONAL THERAPY\n";
 $text_body .= "=================================================================\n\n";
 $text_body .= "Full Name:        " . $name . "\n";
-$text_body .= "Phone / WhatsApp: " . $phone . "\n";
+$text_body .= "Phone / WhatsApp: " . $formatted_phone . "\n";
 $text_body .= "Email:            " . $email . "\n";
 $text_body .= "Address / Suburb: " . ($address ? $address : "Not provided") . "\n";
 $text_body .= "Area of Interest: " . $track_display . "\n";
@@ -117,7 +137,7 @@ $html_body = '<!DOCTYPE html>
                 <tr>
                   <td style="padding:12px 16px; border-bottom:1px solid #ECE7DD; font-size:12px; font-weight:bold; text-transform:uppercase; color:#0B4033; letter-spacing:0.05em;">Contact Number</td>
                   <td style="padding:12px 16px; border-bottom:1px solid #ECE7DD; font-size:14px; color:#111111;">
-                    <a href="tel:' . htmlspecialchars($phone) . '" style="color:#0B4033; font-weight:bold; text-decoration:none;">' . htmlspecialchars($phone) . '</a>
+                    <a href="tel:' . htmlspecialchars($clean_phone) . '" style="color:#0B4033; font-weight:bold; text-decoration:none;">' . htmlspecialchars($formatted_phone) . '</a>
                   </td>
                 </tr>
                 <tr>

@@ -488,29 +488,36 @@
           </div>
         </div>
 
-        <form id="intake-form" class="contact-card" action="contact.php" method="POST">
+        <form id="intake-form" class="contact-card" action="contact.php" method="POST" novalidate>
           <h3>Enquiry Form</h3>
           <p style="font-size:0.9rem; margin-bottom:1.5rem;">Submit your details and we will respond promptly within professional scope.</p>
 
+          <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+
           <div class="form-group">
             <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="Your name and surname" required>
+            <input type="text" id="name" name="name" placeholder="Your name and surname" required autocomplete="name">
+            <span class="field-error" id="name-error"></span>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="phone">Phone / WhatsApp Number *</label>
-              <input type="tel" id="phone" name="phone" placeholder="e.g. 082 123 4567" required>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. 082 123 4567" required autocomplete="tel">
+              <small class="field-hint">SA mobile or landline (e.g. 082 123 4567 or +27 61 530 6884)</small>
+              <span class="field-error" id="phone-error"></span>
             </div>
             <div class="form-group">
               <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="name@example.com" required>
+              <input type="email" id="email" name="email" placeholder="name@example.com" required autocomplete="email">
+              <span class="field-error" id="email-error"></span>
             </div>
           </div>
 
           <div class="form-group">
             <label for="address">Residential Address or Suburb</label>
-            <input type="text" id="address" name="address" placeholder="e.g. Mayfair West, Midrand, or home/workplace address">
+            <input type="text" id="address" name="address" placeholder="e.g. Mayfair West, Midrand, or home/workplace address" autocomplete="street-address">
+            <small class="field-hint">Optional: Helps us match you with the closest consulting rooms or plan home/workplace visits.</small>
           </div>
 
           <div class="form-group">
@@ -522,11 +529,13 @@
               <option value="corporate">Corporate / Employer Consultation</option>
               <option value="general">General Professional Enquiry</option>
             </select>
+            <span class="field-error" id="track-error"></span>
           </div>
 
           <div class="form-group">
             <label for="message">Message / Context *</label>
             <textarea id="message" name="message" rows="4" placeholder="Briefly describe the functional goals, role demands, or questions..." required></textarea>
+            <span class="field-error" id="message-error"></span>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width:100%;">Submit Enquiry</button>
