@@ -209,6 +209,51 @@ function initContactForm() {
   }
 
   if (phoneInput) {
+    // Real-time keystroke restriction & digit capping
+    phoneInput.addEventListener('input', () => {
+      let val = phoneInput.value;
+
+      // 1. Filter out disallowed characters (letters, symbols); allow digits, +, spaces, hyphens, brackets
+      let clean = val.replace(/[^0-9+\s\-\(\)]/g, '');
+
+      // 2. Enforce South African number length restrictions while typing
+      const isPlus = clean.trim().startsWith('+');
+      const digits = clean.replace(/\D/g, '');
+
+      if (isPlus) {
+        // International SA format (+27 + 9 digits = 11 digits max)
+        const maxDigits = digits.startsWith('27') ? 11 : 12;
+        if (digits.length > maxDigits) {
+          const truncated = digits.slice(0, maxDigits);
+          clean = '+' + truncated.replace(/^(\d{2})(\d{2})(\d{3})(\d{4})$/, '$1 $2 $3 $4');
+        }
+      } else if (digits.startsWith('0')) {
+        // Domestic SA format: strictly capped at exactly 10 digits
+        if (digits.length > 10) {
+          const truncated = digits.slice(0, 10);
+          clean = truncated.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1 $2 $3');
+        }
+      } else if (digits.startsWith('27')) {
+        // 27 without +: strictly max 11 digits
+        if (digits.length > 11) {
+          clean = digits.slice(0, 11);
+        }
+      }
+
+      if (clean !== val) {
+        phoneInput.value = clean;
+      }
+
+      // 3. Clear invalid status immediately once user fixes the number
+      if (phoneInput.classList.contains('is-invalid')) {
+        const saCheck = validateSAPhone(phoneInput.value.trim());
+        if (saCheck.isValid) {
+          clearFieldError(phoneInput, errorEls.phone);
+        }
+      }
+    });
+
+    // Final validation and standard formatting on blur
     phoneInput.addEventListener('blur', () => {
       const val = phoneInput.value.trim();
       if (!val) {
@@ -221,15 +266,6 @@ function initContactForm() {
       } else {
         phoneInput.value = saCheck.formatted;
         clearFieldError(phoneInput, errorEls.phone);
-      }
-    });
-
-    phoneInput.addEventListener('input', () => {
-      if (phoneInput.classList.contains('is-invalid')) {
-        const saCheck = validateSAPhone(phoneInput.value.trim());
-        if (saCheck.isValid) {
-          clearFieldError(phoneInput, errorEls.phone);
-        }
       }
     });
   }
