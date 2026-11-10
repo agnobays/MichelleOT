@@ -185,7 +185,7 @@ $html_body = '<!DOCTYPE html>
           <tr>
             <td style="background-color:#FAF8F3; padding:20px 30px; border-top:1px solid #ECE7DD; text-align:center;">
               <p style="color:#0B4033; font-size:12px; font-weight:bold; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 4px 0;">EMPOWERING EVERY STEP TOWARDS A MEANINGFUL LIFE</p>
-              <p style="color:#666666; font-size:11px; margin:0 0 6px 0;">Netcare Garden City Hospital • Midrand Consulting Rooms</p>
+              <p style="color:#666666; font-size:11px; margin:0 0 6px 0;">Netcare Garden City Hospital • Midrand Consulting Rooms • Netcare Sunward Park Hospital</p>
               <p style="color:#999999; font-size:10px; margin:0; line-height:1.4;">Confidentiality Notice: This consultation transmission contains privileged healthcare information intended strictly for Michelle Sathekge Occupational Therapy under the Protection of Personal Information Act (POPIA).</p>
             </td>
           </tr>

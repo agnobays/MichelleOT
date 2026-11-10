@@ -482,24 +482,34 @@ function switchMapLocation(locationId) {
   const btns = document.querySelectorAll('.location-tab-btn');
   const cardGardenCity = document.getElementById('card-gardencity');
   const cardMidrand = document.getElementById('card-midrand');
+  const cardSunward = document.getElementById('card-sunwardpark');
   const mapFrame = document.getElementById('interactive-map-frame');
 
   if (locationId === 'gardencity') {
     if (cardGardenCity) cardGardenCity.style.display = 'block';
     if (cardMidrand) cardMidrand.style.display = 'none';
+    if (cardSunward) cardSunward.style.display = 'none';
     if (mapFrame) {
       mapFrame.src = 'https://maps.google.com/maps?q=Netcare+Garden+City+Hospital+35+Bartlett+Road+Johannesburg&t=&z=14&ie=UTF8&iwloc=&output=embed';
     }
   } else if (locationId === 'midrand') {
     if (cardGardenCity) cardGardenCity.style.display = 'none';
     if (cardMidrand) cardMidrand.style.display = 'block';
+    if (cardSunward) cardSunward.style.display = 'none';
     if (mapFrame) {
       mapFrame.src = 'https://maps.google.com/maps?q=Woodmead+Dr+and+Dytchley+Rd+Midrand+1686&t=&z=14&ie=UTF8&iwloc=&output=embed';
+    }
+  } else if (locationId === 'sunwardpark') {
+    if (cardGardenCity) cardGardenCity.style.display = 'none';
+    if (cardMidrand) cardMidrand.style.display = 'none';
+    if (cardSunward) cardSunward.style.display = 'block';
+    if (mapFrame) {
+      mapFrame.src = 'https://maps.google.com/maps?q=Netcare+Sunward+Park+Hospital+16+Albrecht+Road+Sunward+Park+Boksburg&t=&z=14&ie=UTF8&iwloc=&output=embed';
     }
   }
 
   btns.forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('onclick').includes(locationId));
+    btn.classList.toggle('active', btn.getAttribute('onclick')?.includes(locationId));
   });
 }
 

@@ -41,6 +41,12 @@
           "address": "Woodmead Dr & Dytchley Rd, Barbeque Downs / Plooysville AH, Midrand, 1686",
           "hours": "Tuesday & Thursday: 09:00 – 15:00",
           "mapQuery": "Woodmead+Dr+Dytchley+Rd+Midrand+1686"
+        },
+        {
+          "name": "Netcare Sunward Park Hospital",
+          "address": "16 Albrecht Road, Sunward Park, Boksburg, 1459",
+          "hours": "Friday & Consultations by Appointment",
+          "mapQuery": "Netcare+Sunward+Park+Hospital+16+Albrecht+Road+Sunward+Park+Boksburg"
         }
       ]
     }
